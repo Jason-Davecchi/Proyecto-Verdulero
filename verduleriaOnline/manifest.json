@@ -1,0 +1,14 @@
+{
+    "name":"Verduleria",
+    "short_name":"Tienda",
+    "lang":"es-ES",
+    "icons": [{
+        "src":"/image/icono.png",
+        "sizes":"128x128",
+        "type": "image/png"
+    }],
+    "start_url":"/index.html",
+    "display":"standalone",
+    "background_color":"white",
+    "theme_color":"white"
+}

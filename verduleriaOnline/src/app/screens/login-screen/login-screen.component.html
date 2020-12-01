@@ -1,0 +1,50 @@
+<div class="container-fluid">
+  <div class="row justify-content-center my-5">
+    <div class="col-4">
+      <div class="form-group">
+        <br>
+        <div class="subRayar"><h4 class="text-center">Iniciar Sesión</h4></div>
+        <br>
+        <form [formGroup]="contactForm" (ngSubmit)="onSaveForm()">
+          <div class="text-center">
+            <label for="">Rut</label>
+          </div>
+          <div class="text-center">
+            <input type="text"  [(ngModel)] = "login.rut" formControlName="rut" placeholder="Rut">
+            <div class="alert-danger" *ngIf="rut.invalid && (rut.dirty || rut.touched)">
+              <div class="container-error-message" *ngIf="rut.errors.required">
+                Campo obligatorio!
+              </div>
+              <div class="container-error-message"
+                *ngIf="(rut.dirty || rut.touched) && rut.invalid && rut.errors.pattern">
+                Formato del rut: xxxxxxxx-x
+              </div>
+            </div>
+          </div>
+          <div class="text-center">
+            <label for="">Contraseña </label>
+          </div>
+          <div class="text-center">
+            <input type="password" [(ngModel)] = "login.contrasena" formControlName="contrasena" placeholder="Contraseña">
+      
+          <div class="alert-danger" *ngIf="contrasena.invalid && (contrasena.dirty || contrasena.touched)">
+            <div class="container-error-message" *ngIf="contrasena.errors.required">
+              Campo obligatorio!
+            </div>
+            <div class="container-error-message" *ngIf="contrasena.errors.maxlength || contrasena.errors.minlength">
+             La contraseña debe tener min 4 y max 10 caracteres.
+            </div>
+          </div>
+          </div>
+          <br>
+          <button class="btn btn-info mx-auto my-1 btn-block" type="submit" (click)="loginUsuario()" >Ingresar</button>
+          <br>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

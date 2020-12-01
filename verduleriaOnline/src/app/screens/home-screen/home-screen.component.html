@@ -1,0 +1,18 @@
+<div class="container-fluid">
+    <div class="row">
+      <!-- Filtros -->
+      <div class="col-xl-2">
+        <app-side-bar></app-side-bar>
+      </div>
+      <div class="col-xl-10">
+        <div class="product-grid my-2">
+          <div class="row">
+                        <!-- Products  [product]="products"-->        
+            <app-product *ngFor = "let product of products" [product] = "product"> </app-product>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div>
+</div>
